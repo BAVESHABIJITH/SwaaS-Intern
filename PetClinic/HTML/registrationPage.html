@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reg. Form</title>
+    <link rel="stylesheet" href="../CSS/registrationPage.css">
+</head>
+<body>
+    <form action="./LandingPage.html">
+        <h1>Registration Form</h1>
+        <div class="container">
+            <div class="ownerDetails">
+                <h2>Enter Owner Details below</h2>
+                <div class="form">
+        
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+                    <label for="address">Address:</label>
+                    <textarea name="address" id="address" placeholder="Enter your address"></textarea>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+            </div>
+            <div class="petDetails">
+                <h2>Enter Pet Details below</h2>
+                <div class="form">
+                    <label for="petName">Pet Name:</label>
+                    <input type="text" id="petName" name="petName" placeholder="Enter your pet name">
+                    <label for="petType">Pet Type:</label>
+                    <select name="petType" id="petType" onchange="setBreed()">
+                        <option value="">Select a pet type</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Bird">Bird</option>
+                    </select>
+                    <label for="gender">Gender:</label>
+                    <div class="selctors">
+                        <input type="radio" name="gender" id="genderMale" value="male">
+                        <label for="genderMale">Male</label>
+                        <input type="radio" name="gender" id="genderFemale" value="female">
+                        <label for="genderFemale">Female</label>
+                    </div>
+                    <label for="breed">Breed:</label>
+                    <select name="breed" id="breed">
+                        <option value="">Select pet type first</option>
+                    </select>
+                    <label for="allergies">Allergies:</label>
+                    <textarea name="allergies" id="allergies" placeholder="Enter your allergies"></textarea>
+                    <label for="vaccination">Vaccination:</label>
+                    <div class="selctors">
+                        <input type="checkbox" name="rabies" >
+                        <label for="rabies">Rabies</label>
+                        <input type="checkbox" name="distemper">
+                        <label for="distemper">Distemper</label>
+                        <input type="checkbox" name="parvovirus">
+                        <label for="parvovirus">Parvovirus</label>
+                        <input type="checkbox" name="hepatitis" >
+                        <label for="hepatitis">Hepatitis</label>
+                    </div>
+                </div>
+            </div>
+             <div>
+                <button type="submit" onclick="saveUser()">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+<script>
+    let userDetails={};
+    function saveUser(){
+        let fullName=document.getElementById("fullName").value;
+        let email=document.getElementById("email").value;
+        let phone=document.getElementById("phone").value;
+        let address=document.getElementById("address").value;
+        let password=document.getElementById("password").value;
+        let petName=document.getElementById("petName").value;
+        let petType=document.getElementById("petType").value;
+        let gender=document.getElementById("gender").value;
+        let breed=document.getElementById("breed").value;
+        let allergies=document.getElementById("allergies").value;
+        let vaccination=document.getElementById("vaccination").value;
+        userDetails.fullName=fullName;
+        userDetails.email=email;
+        userDetails.phone=phone;
+        userDetails.address=address;
+        userDetails.password=password;
+        userDetails.petName=petName;
+        userDetails.petType=petType;
+        userDetails.gender=gender;
+        userDetails.breed=breed;
+        userDetails.allergies=allergies;
+        userDetails.vaccination=vaccination;
+        console.log(userDetails);
+    }
+</script>
+</html>

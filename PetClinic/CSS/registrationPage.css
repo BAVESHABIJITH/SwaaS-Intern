@@ -1,0 +1,84 @@
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.ownerDetails, .petDetails {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.ownerDetails h2, .petDetails h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px 10px;
+    align-items: center;
+}
+
+.form-grid label {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.form-grid input[type="text"],
+.form-grid input[type="email"],
+.form-grid input[type="tel"],
+.form-grid input[type="password"],
+.form-grid select,
+.form-grid textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.form-grid textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.input-selctors {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.submit-container {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    padding: 10px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
