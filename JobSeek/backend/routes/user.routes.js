@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const protect = require('../middleware/auth.middleware');
+const {updateProfile,createResume, getMyResumes,deleteResume,updateResume,getResumeById} = require('../controllers/user.controller');
+router.put('/updateProfile',protect,updateProfile);
+router.post('/createResume',protect,createResume);
+router.get('/getMyResumes',protect,getMyResumes);
+router.delete('/deleteResume/:id',protect,deleteResume);
+router.put('/updateResume/:id', protect, updateResume);
+router.get('/getResumeById/:id',protect,getResumeById);
+module.exports = router;

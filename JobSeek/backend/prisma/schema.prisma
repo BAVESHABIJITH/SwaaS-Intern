@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  JOBSEEKER
+  RECRUITER
+  ADMIN
+}
+
+enum Status {
+  ACTIVE
+  CLOSED
+  DRAFT
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  jobs         Job[]
+  resumes      Resume[]
+  applications Application[]
+  sentMessages     Chat[] @relation("SentMessages")
+  receivedMessages Chat[] @relation("ReceivedMessages")
+}
+
+model Job {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  company     String
+  location    String?
+  salary      String?
+  skills      String[]
+  status      Status   @default(ACTIVE)
+  recruiterId Int
+  recruiter   User     @relation(fields: [recruiterId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  applications Application[]
+}
+
+model Resume {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   Json
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Application {
+  id         Int      @id @default(autoincrement())
+
+  status     String
+  resumeFile String
+
+  userId     Int
+  user       User     @relation(fields: [userId], references: [id])
+
+  jobId      Int
+  job        Job      @relation(fields: [jobId], references: [id])
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, jobId])
+}
+
+model Chat {
+  id         Int      @id @default(autoincrement())
+
+  senderId   Int
+  sender     User     @relation("SentMessages", fields: [senderId], references: [id])
+
+  receiverId Int
+  receiver   User     @relation("ReceivedMessages", fields: [receiverId], references: [id])
+
+  message    String
+
+  createdAt  DateTime @default(now())
+}

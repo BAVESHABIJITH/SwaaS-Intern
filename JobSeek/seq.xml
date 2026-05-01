@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Movie Booking Sequence">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Actors -->
+        <mxCell id="user" value="User" style="shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Services -->
+        <mxCell id="bs" value="BookingService" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="150" y="50" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ss" value="ShowService" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="320" y="50" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="seat" value="SeatService" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="490" y="50" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ts" value="TheatreService" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="660" y="50" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ps" value="PaymentService" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="830" y="50" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Flow: Get Shows -->
+        <mxCell id="e1" value="getShows(cityId, movieId)" edge="1" parent="1" source="user" target="bs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" value="fetchShows(cityId, movieId)" edge="1" parent="1" source="bs" target="ss">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" value="getShowsFromTheatre(cityId, movieId)" edge="1" parent="1" source="ss" target="ts">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Seats -->
+        <mxCell id="e4" value="getAvailableSeats(showId)" edge="1" parent="1" source="user" target="bs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" value="fetchAvailableSeats(showId)" edge="1" parent="1" source="bs" target="seat">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6" value="checkSeatAvailability(showId)" edge="1" parent="1" source="seat" target="ts">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Lock Seats -->
+        <mxCell id="e7" value="lockSeats(showId, seatIds, userId)" edge="1" parent="1" source="user" target="bs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e8" value="lockSeats(showId, seatIds)" edge="1" parent="1" source="bs" target="seat">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e9" value="lockSeats(showId, seatIds)" edge="1" parent="1" source="seat" target="ts">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Payment -->
+        <mxCell id="e10" value="initiatePayment(amount, userId, lockId)" edge="1" parent="1" source="user" target="bs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e11" value="createPayment(amount, userId, lockId)" edge="1" parent="1" source="bs" target="ps">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e12" value="verifyPayment(paymentId)" edge="1" parent="1" source="bs" target="ps">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Success -->
+        <mxCell id="e13" value="confirmBooking(lockId, paymentId)" edge="1" parent="1" source="bs" target="seat">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e14" value="reserveSeats(lockId)" edge="1" parent="1" source="seat" target="ts">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Failure -->
+        <mxCell id="e15" value="releaseSeats(lockId)" edge="1" parent="1" source="bs" target="seat">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e16" value="releaseSeats(lockId)" edge="1" parent="1" source="seat" target="ts">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
