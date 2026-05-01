@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+</body>
+<script>
+    let btn = document.getElementById("btn");
+    let count = 0;
+    btn.addEventListener("click", () => {
+        count++;
+        if(count==100){
+            btn.disabled = true;
+        }
+        btn.textContent = `Clicked: ${count}`;
+    });
+    var i=1;
+    console.log(`This is first ${i}`);
+    for(var i=0;i<5;i++){
+        console.log(`This is from for loop ${i}`);
+    }
+    console.log(`This is last ${i}`);
+
+    // let i=1;
+    // console.log(i); 
+    // for (let i=0;i<=10;i++){
+    //     console.log(`This is from for loop ${i}`);
+    // }
+    // console.log(i);
+</script>
+</html> 
