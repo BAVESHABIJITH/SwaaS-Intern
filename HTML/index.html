@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Browser</title>
+</head>
+<body>
+  <a href="personal.html">Personal Details</a>
+  <a href="Task.html">Tasks</a>
+    <br>
+    <br>
+  <img src="https://www.w3schools.com/html/workplace.jpg" alt="" align="center" height="500px" width="500px" usemap="#i1">
+  <map name="i1">
+    <area shape="rect" coords="34,44,270,350"  href="personal.html">
+  <area shape="circle" coords="0,0,100"  href="Task.html">
+  </map>
+  <br>
+  <br>
+  <img src="https://www.w3schools.com/html/workplace.jpg" loading="lazy" alt="" width="500px" height="500px">
+  <audio src="./file_example_MP3_700KB.mp3" controls autoplay loop preload="metadata" muted type="audio/mpeg">You don't support audio</audio>
+  <video src="https://youtu.be/a3ICNMQW7Ok?si=4WP5iw4LHZw1NYVO" controls loop type="video/mp4">You don't support video</video>
+  <iframe src="https://youtu.be/a3ICNMQW7Ok?si=4WP5iw4LHZw1NYVO" controls width="500px" height="500px"></iframe>
+  <audio src="./file_example_MP3_700KB.mp3" id="a1" preload="none"></audio>
+  <button onclick="document.getElementById('a1').play()">Play</button>
+   <button onclick="document.getElementById('a1').pause()">pause</button>
+    <button onclick="mute()">mute</button>
+    <button onclick="unmute()">unmute</button>
+    <video src="./12688023_3840_2160_30fps.mp4" type="video/mp4" controls style="width: 500px; width: 500px;"></video>
+    <video src="./12688023_3840_2160_30fps.mp4" type="video/mp4" poster="https://www.w3schools.com/html/workplace.jpg" style="width: 500px; width: 500px;" id="v1"></video>
+    <button onclick="run()">Play</button>
+    <button onclick="stop()">Pause</button>
+</body>
+<script>
+  let aud=document.getElementById('a1');
+  let vid=document.getElementById('v1');
+  function mute(){
+    aud.muted=true
+  }
+  function run(){
+    vid.play()
+  }
+  function stop(){
+    vid.pause()
+  }
+  function unmute(){
+    aud.muted=false;
+  }
+</script>
+</html>

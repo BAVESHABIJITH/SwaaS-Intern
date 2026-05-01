@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is a question</h1>
+    <input type="radio" id="option1" class="option">
+    <label for="option1">Option 1</label>
+    <input type="radio" id="option2" class="option">
+    <label for="option2">Option 2</label>
+    <input type="radio" id="option3" class="option">
+    <label for="option3">Option 3</label>
+    <input type="radio" id="option4" class="option">
+    <label for="option4">Option 4</label>
+
+    <br>
+    <button id="btn">Get Data</button>
+</body>
+<script>
+    const option1 = document.getElementById("option1");
+    const option2 = document.getElementById("option2");
+    const option3 = document.getElementById("option3");
+    const option4 = document.getElementById("option4");
+    option1.addEventListener("click",()=>{
+        if(option1.checked){
+            option2.disabled = true;
+            option3.disabled = true;
+            option4.disabled = true;
+        }
+    });
+    option2.addEventListener("click",()=>{
+        if(option2.checked){
+            option1.disabled = true;
+            option3.disabled = true;
+            option4.disabled = true;
+        }
+    });
+    option3.addEventListener("click",()=>{
+        if(option3.checked){
+            option1.disabled = true;
+            option2.disabled = true;
+            option4.disabled = true;
+        }
+    });
+    option4.addEventListener("click",()=>{
+        if(option4.checked){
+            option1.disabled = true;
+            option2.disabled = true;
+            option3.disabled = true;
+        }   
+    });
+    
+    function fetchUserData(callback){
+        setTimeout(() => {
+            const userData = {
+                name: "John Doe",
+                age: 30,
+                email: "johndoe@mail.com"
+            };
+            callback(userData);
+        }, 10000);
+    }
+
+    document.getElementById("btn").addEventListener("click",()=>{
+        console.log("Button clicked");
+        fetchUserData((userData)=>{
+            console.log("Data fetched");
+            console.log(userData);
+        });
+        console.log("Button clicked");
+    });
+</script>
+</html>

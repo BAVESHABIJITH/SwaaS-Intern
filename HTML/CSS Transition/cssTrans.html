@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .con2{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition-property: all;
+            transition-duration: 10s;
+            transition-timing-function: ease-out;
+            transition-delay: 0s;
+            position: relative;
+        }
+        .con2:hover{
+            position:absolute;
+            top: 50px;
+            left: 50px
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="con2"></div>
+    </div>
+</body>
+</html>

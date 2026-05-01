@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Employee(name,pos,sal){
+        this.name = name;
+        this.pos = pos;
+        this.sal = sal;
+    }
+    Employee.prototype.describeJob = function(){
+        console.log(`This employee ${this.name} is a ${this.pos} and his salary is ${this.sal}`);
+    }
+    function Manager(name,pos,sal,teamSize){
+        Employee.call(this,name,pos,sal);
+        this.teamSize = teamSize;
+    }
+    Manager.prototype = Object.create(Employee.prototype);
+    Manager.prototype.constructor = Manager;
+    Manager.prototype.superViseTeam = function(){
+        console.log(`${this.name} manages a team of ${this.teamSize}`);
+    }
+    function Developer(name,pos,sal,progLang){
+        Employee.call(this,name,pos,sal);
+        this.progLang = progLang;
+    }
+    Developer.prototype = Object.create(Employee.prototype);
+    Developer.prototype.constructor = Developer;
+    Developer.prototype.code = function(){
+        console.log(`${this.name} is a ${this.pos} and he codes in ${this.progLang}`);
+    }
+    const emp1 = new Employee("John", "Developer", 100000);
+    const emp3 = new Employee("Bob", "Manager", 300000);
+    emp1.describeJob();
+    emp3.describeJob();
+</script>
+</html>

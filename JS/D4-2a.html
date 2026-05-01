@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age">
+        <a href="D4-2b.html?name=saasankumar&age=21">go-pg2</a>
+    </form>
+</body>
+<script>
+    const btn = document.getElementById("btn");
+    btn.addEventListener("click",(e)=>{
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        
+    })
+</script>
+</html>

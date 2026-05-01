@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter value1" id="val1">
+    <input type="number" placeholder="Enter value2" id="val2">
+    <select name="operation" id="operation">
+        <option value="add">Add</option>
+        <option value="sub">Subtract</option>
+        <option value="mul">Multiply</option>
+        <option value="div">Divide</option>
+    </select>
+    <button onclick="calculate()">Calculate</button>
+    <input type="number" disabled id="result" placeholder="Result">
+</body>
+<script>
+    function calculate(){
+        let val1 = document.getElementById('val1').value;
+        let val2 = document.getElementById('val2').value;
+        let operation = document.getElementById('operation').value;
+        let res = document.getElementById('result');
+        switch(operation){
+            case 'add':
+                res.value=Number(val1)+Number(val2);
+                break;
+            case 'sub':
+                res.value=Number(val1)-Number(val2);
+                break;
+            case 'mul':
+                res.value=Number(val1)*Number(val2);
+                break;
+            case 'div':
+                res.value=Number(val1)/Number(val2);
+                break;
+            default:
+                alert("Invalid Operation");
+                break;
+        }
+    }
+</script>
+</html>

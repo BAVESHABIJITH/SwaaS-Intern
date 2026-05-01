@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Scary-font';
+    src: url('../fonts/Eater/Eater-Regular.ttf') format('truetype') ;
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+    font-family: 'Scary-font';
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    /* font-variant: small-caps; */
+}
+body{
+    background-color: black;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ97XpvtPfilpR833efKKWK_88GVE1aTvJBm93TYOFmDVmsocjCtzpjTVcmgiuAo5bqdKE-Bl6irNe3JmIsIqQ-apHWkg5rom8kSXcYRsgX_w&s=10');
+    background-position: center;
+}
+div{
+    background: repeating-radial-gradient(red, green, blue);
+    height: 500px;
+    width: 500px;
+
+}

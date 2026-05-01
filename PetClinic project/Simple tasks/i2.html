@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            color: black;
+        }
+        ul:first-child{
+            color: aqua;
+        }
+        ul:last-child{
+            color: red;
+        }
+        li:hover{
+            color: blue;
+        }
+        li:active{
+            color: green;
+        }
+        li:nth-child(odd):hover{
+            color: yellow;
+        }
+        li:nth-child(even):hover{
+            color: orange;
+        }
+        li:focus{
+            background-color: black;
+        }
+        button:active{
+            background-color: green;
+        }
+        ul:first-child{
+            color: blueviolet;
+        }
+        ul:last-child{
+            color: brown;
+        }
+        .btn:hover{
+            border-color: blue;
+        }
+        #i1:hover{
+           border: 1px solid black;
+           border-radius: 50%;
+           background-color: blueviolet;
+        }
+        #i2:hover{
+            background-color: black;
+            color: white;
+        }
+        div:first-child{
+            background-color: aqua;
+        }
+        div:last-child{
+           background-color: blueviolet;
+        }
+        .con2:first-child:hover{
+           color: brown;
+           border: 10px solid black;
+        }
+        .con2:last-child:hover{
+            color: green;
+        }
+        .con3 p:first-child::before{
+            content: "Hello World";
+            color: red;
+        }
+        .con3 p:last-child::after{
+            content: "Hello World";
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li id="i1">First</li>
+            <li id="i1">Second</li>
+            <li id="i1">Third</li>
+            <li id="i1">Fourth</li>
+            <li id="i1">Fifth</li>
+        </ul>
+        <p id="i2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, est!</p>
+        <p id="i2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, est!</p>
+        <button class="btn">Clicke me</button>
+        <p>Hello World</p>
+    </div>
+    <div class="con2">
+        <p>
+            This is 1st paragraph, should be red
+        </p>
+        <p>
+            This is 2nd paragraph
+        </p>
+        <p>
+            This is 3rd paragraph
+        </p>
+        <p>
+            This is 4th paragraph
+        </p>
+        <p>
+            This is 5th paragraph, should be green
+        </p>
+    </div>
+    <div class="con3">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim nam laudantium accusamus corrupti exercitationem assumenda, porro unde alias ad rerum illum dignissimos. Enim, consequuntur fugit rerum soluta aspernatur neque ad?
+        </p>
+    </div>
+</body>
+</html>

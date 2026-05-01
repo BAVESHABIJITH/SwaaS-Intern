@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        input{
+            padding: 5px 10px;
+            margin: 10px;
+        }
+        button{
+            padding: 5px 10px;
+            margin: 10px;
+        }
+        table{
+            margin: 20px;
+        }
+        th{
+            padding: 5px 10px;
+            margin: 10px;
+        }
+        td{
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Eneter Student's name" id="name">
+    <input type="text" placeholder="Eneter Student's Eng marks" id="marks1">
+    <input type="text" placeholder="Eneter Student's Tamil marks" id="marks2">
+    <input type="text" placeholder="Eneter Student's Maths marks" id="marks3">
+    <input type="text" placeholder="Eneter Student's Science marks" id="marks4">
+    <input type="text" placeholder="Eneter Student's Social marks" id="marks5">
+    <button onclick="addStudent()">Add Student</button>
+    <table border="1" style="margin: 20px;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Eng</th>
+                <th>Tam</th>
+                <th>Maths</th>
+                <th>Science</th>
+                <th>Social</th>
+                <th>Total</th>
+                <th>Average</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+        </tbody>
+    </table>
+</body>
+<script>
+    let students = [];
+    function addStudent(){
+        const name = document.getElementById("name").value;
+        const marks1 = parseInt(document.getElementById("marks1").value);
+        const marks2 = parseInt(document.getElementById("marks2").value);
+        const marks3 = parseInt(document.getElementById("marks3").value);
+        const marks4 = parseInt(document.getElementById("marks4").value);
+        const marks5 = parseInt(document.getElementById("marks5").value);
+        students.push({name:name,marks:[marks1, marks2, marks3, marks4, marks5]});
+        console.log(students);
+        renderStudent();
+        document.getElementById("name").value = "";
+        document.getElementById("marks1").value = "";
+        document.getElementById("marks2").value = "";
+        document.getElementById("marks3").value = "";
+        document.getElementById("marks4").value = "";
+        document.getElementById("marks5").value = "";
+        
+    }
+    function renderStudent(){
+        const table = document.getElementById("table");
+        table.innerHTML = "";
+        students.forEach((student, index) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${student.name}</td>
+                <td>${student.marks[0]}</td>
+                <td>${student.marks[1]}</td>
+                <td>${student.marks[2]}</td>
+                <td>${student.marks[3]}</td>
+                <td>${student.marks[4]}</td>
+                <td>${student.marks[0] + student.marks[1] + student.marks[2] + student.marks[3] + student.marks[4]}</td>
+                <td>${(student.marks[0] + student.marks[1] + student.marks[2] + student.marks[3] + student.marks[4]) / 5}</td>
+            `;
+            table.appendChild(tr);
+        });
+    }
+</script>
+</html>

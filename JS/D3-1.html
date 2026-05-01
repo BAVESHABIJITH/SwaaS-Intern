@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        li{
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+        button{
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="task-input" placeholder="Enter the task">
+    <button onclick="addTask()">Add</button>
+    <h2>Task-List</h2>
+    <ul id="task-list">
+    
+    </ul>
+</body>
+<script>
+    let task = [];
+    function addTask(){
+        const input = document.getElementById("task-input");
+        if(input.value === ""){
+            input.placeholder = "Please enter a task";
+            return;
+        }
+        task.push(input.value);
+        renderTask();
+        input.value = "";
+    }
+    function renderTask(){
+        const taskList = document.getElementById("task-list");
+        taskList.innerHTML = "";
+        task.forEach((task, index) => {
+            const li = document.createElement("li");
+            li.textContent = task;
+            const del = document.createElement("button");
+            del.textContent = "X";
+            del.onclick =()=>{
+                removeTask(index);
+            }
+            li.appendChild(del);
+            taskList.appendChild(li);
+        });
+    }
+    function removeTask(index){
+        task.splice(index, 1);
+        renderTask();
+    }
+</script>
+</html>

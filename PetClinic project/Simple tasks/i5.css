@@ -1,0 +1,38 @@
+.block{
+    background-color: aqua;
+    height: 100px;
+    display: block;
+}
+.inline{
+    background-color: orange;
+    height: 100px;
+    display: inline;
+}
+.inline-block{
+    background-color: green;
+    height: 100px;
+    display: inline-block;
+}
+.none{
+    background-color: yellow;
+    height: 100px;
+    display: none;
+}
+.para1{
+    background-color: aqua;
+    height: 100px;
+}
+.para2{
+    background-color: red;
+    height: 100px;
+}
+.para3{
+    background-color: green;
+    width: 250px;
+    height: 250px;
+}
+.para4{
+    background-color: yellow;
+    width: 250px;
+    height: 250px;
+}

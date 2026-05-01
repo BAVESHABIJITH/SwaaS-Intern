@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="username">
+    <input type="password" name="" id="password">
+    <a href="D4-3b.html"><button id="login">Login</button></a>
+</body>
+<script>
+    const btn = document.getElementById("login");
+    btn.addEventListener("click",(e)=>{
+        const userName = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        window.name = JSON.stringify({
+            username:userName,
+            password:password
+        });
+    })
+</script>
+</html>

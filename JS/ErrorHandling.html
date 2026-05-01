@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1) Try Catch
+    // try{
+    //     // let b=7;
+    //     console.log(b);
+    // }
+    // catch(err){
+    //     console.log(err);
+    // }
+
+    //Throw to throw custom error
+    try{
+        let age=15;
+        if(age<18){
+            throw new Error("You are not eligible for voting");
+        }
+        else{
+            console.log("You are eligible for voting");
+        }
+    }
+    catch(err){
+        console.error(err);
+        console.log(err.name);
+        console.log(err.message);
+        console.log(err.stack);
+    }
+</script>    
+</html>

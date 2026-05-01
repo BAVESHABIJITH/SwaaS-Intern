@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="D4-5b.html">Page 2</a>
+    
+</body>
+<script>
+    // history.pushState({name:"Ramesh",age:25,city:"Chennai"},"Page2","D4-5b.html");
+    let db;
+    const req = indexedDB.open("MyDB1",1);
+    req.onsuccess = (event) => {
+        db = event.target.result;
+        console.log("DB opened");
+        addUser(db);
+        getUser(1,db);
+        deleteUser(1,db);
+        addUsers(db);
+        getAllUsers(db);
+    };
+    req.onerror = (event) => {
+        console.log("Error opening DB");
+    };
+    req.onupgradeneeded = (event) => {
+        db = event.target.result;
+        if(!db.objectStoreNames.contains("users")){
+            const objStore = db.createObjectStore("users",{keyPath:"id"});
+            objStore.createIndex("name","name",{unique:false});
+            console.log("Obj created");
+        }
+    }
+    function addUser(db){
+        const tx = db.transaction(["users"],"readwrite");
+        const store = tx.objectStore("users");
+       const user = {id:1,"name":"Ramesh"};
+       const req = store.add(user);
+       req.onsuccess = (event) => console.log("User added",event.target.result);
+       req.onerror = (event) => console.log("Error adding user");
+    }
+    function getUser(id,db){
+            const transaction = db.transaction(["users"],"readonly");
+            const objectStore = transaction.objectStore("users");
+            const request = objectStore.get(id);
+            request.onsuccess = function(event){
+                const user = event.target.result;
+                if(user){
+                    console.log("User found:",user);
+                }else{
+                    console.log("User not found");
+                }
+            };
+            request.onerror = function(event){
+                console.error("Error getting user",event.target.error);
+            };
+        }
+        function deleteUser(id,db){
+            const transaction = db.transaction(["users"],"readwrite");
+            const objectStore = transaction.objectStore("users");
+            const request = objectStore.delete(id);
+            request.onsuccess = function(event){
+                console.log("User deleted from the database");
+            }
+            request.onerror = function(event){
+                console.error("Error deleting user",event.target.error);
+            }
+        }
+        function addUsers(db){
+            const transaction = db.transaction(["users"],"readwrite");
+            const objectStore = transaction.objectStore("users");
+            const users = [
+                {id:5,name:"John",age:30},
+                {id:6,name:"Jane",age:25},
+                {id:7,name:"Bob",age:35}
+            ];
+            users.forEach(user => {
+                objectStore.add(user);
+            });
+            transaction.oncomplete = function(event){
+                console.log("All users added successfully");
+            }
+            transaction.onerror = function(event){
+                console.error("Error adding users",event.target.error);
+            }
+        }
+        function getAllUsers(db){
+            const transaction = db.transaction(["users"],"readonly");
+            const objectStore = transaction.objectStore("users");
+            const request = objectStore.getAll();
+            request.onsuccess = function(event){
+                console.log("Users found:",event.target.result);
+            }
+            request.onerror = function(event){
+                console.error("Error getting users",event.target.error);
+            }
+        }
+</script>
+</html>

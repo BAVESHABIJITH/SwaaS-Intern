@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class ValError extends Error{
+        constructor(message){
+            super(message);
+            console.log(this.message);
+            this.name = "ValError";
+        }
+    }
+    try{
+        throw new ValError("This is a validation error");
+    }
+    catch(err){
+        console.log(err.name);
+        console.log(err.message);
+        console.log(err.stack);
+        console.error(err);
+    }
+    finally{
+        console.log("This will always execute");
+    }
+</script>
+</html>

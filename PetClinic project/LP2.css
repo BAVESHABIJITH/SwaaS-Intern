@@ -1,0 +1,109 @@
+.para1{
+    color: red;
+}
+header{
+    position: sticky;
+    top: 0;
+    background-color: aqua;
+}
+main{
+    background-color: antiquewhite;
+}
+header div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+header div img{
+    width: 100px;
+    height: 100px;
+}
+header div ul{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+header div ul li{
+    flex-grow: 1;
+}
+main h2{
+    text-align: center;
+    padding: 25px;
+}
+main ul{
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: justify;
+    list-style: none;  
+}  
+
+aside{
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    list-style: none;  
+}
+aside h2{
+    text-align: center;
+}
+aside ul{
+    text-align: center;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    list-style: none; 
+}
+aside ul li a{
+   color: black;
+   text-decoration: none;
+
+}
+div{
+    display: flex;
+    flex-direction: row-reverse;
+}
+main{
+    width: 75%;
+}
+aside{
+    width: 25%;
+}
+main img{
+    width: 250px;
+    height: 250px;
+}
+nav{
+    position: sticky;
+    top: 0;
+}
+.parrot-test{
+    display: flex;
+    padding: 25px;
+    flex-direction: row-reverse;
+}
+.dog-test{
+    display: flex;
+    padding: 25px;
+    flex-direction: row;
+}
+h3{
+    text-align: center;
+}
+
+div main{
+    width: 80%;
+}
+div aside{
+    width: 20%;
+}
+aside>h2{
+    padding: 10px;
+}
+main>h1{
+    padding: 10px;
+}

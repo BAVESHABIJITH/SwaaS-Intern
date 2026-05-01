@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe src="D4-4b.html" frameborder="0"></iframe>
+</body>
+<script>
+    const iframe = document.querySelector("iframe");
+    iframe.contentWindow.postMessage({name:"Ramesh",age:21},"*");
+</script>
+</html>

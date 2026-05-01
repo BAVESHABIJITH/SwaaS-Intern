@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <form action="first.html"  method="get" align="center" style="padding-top: 150px;">
+        <h1 style="text-align: center;">Registration Form</h1>
+        <table border="0" align="center" width="100px" height="200px">
+            <tr>
+                <td style="text-align: left;"><label for="Name">Name:</label></td>
+                <td><input type="text" id="Name" name="Name" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><label for="Age">Age:</label></td>
+                <td><input type="text" pattern="[18-24]" name="Age" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><label for="College">College:</label></td>
+                <td><input type="text" id="College" name="College" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><label for="Branch">Branch:</label></td>
+                <td><input type="text" id="Branch" name="Branch" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><label for="Gender">Gender:</label></td>
+                <td><input type="radio" id="Male" name="Gender" ><label for="Male">Male</label><input type="radio" id="Female" name="Gender" ><label for="Female">Female</label></td>
+            </tr>
+            <tr>
+                <td>Detpartment:</td>
+                <td>
+                    <select name="Detpartment" id="Detpartment" style="width: 100%;">
+                        <option value="IT">IT</option>
+                        <option value="CSE">CSE</option>
+                        <option value="BCA">BCA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Email:</td>
+                <td><input type="email" id="Email" name="Email" pattern="[a-z0-9]+@[a-z]+.com"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Password:</td>
+                <td><input type="password" id="Password" name="Password" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Fav. Dept.</td>
+                <td>
+                    <input type="checkbox" id="IT" name="IT" ><label for="IT">IT</label>
+                    <input type="checkbox" id="CSE" name="CSE" ><label for="CSE">CSE</label>
+                    <input type="checkbox" id="BCA" name="BCA" ><label for="BCA">BCA</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Upload your Resume:</td>
+                <td style="text-align: right;"><input type="file" id="Resume" name="Resume" style="width: 100%;"></td>
+               
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button type="submit" value="Submit">Submit</button></td>
+            </tr>       
+        </table>
+    </form>
+    <!-- <div style="
+  display:flex;
+  border:1px solid #ccc;
+  border-radius:4px;
+  overflow:hidden;
+  width:500px;
+  position:relative;
+"> -->
+
+  <!-- <button style="padding:8px 12px;">Upload</button>
+
+  <input type="text"
+         id="fileText"
+         value="Choose file"
+         readonly
+         style="
+           flex:1;
+           border:none;
+           padding:8px;
+         ">
+
+    <button style="padding:8px 12px;">Browse</button>
+
+    <input type="file"
+            id="realFile"
+            style="
+            position:absolute;
+            inset:0;
+            opacity:0;
+            cursor:pointer;
+            ">
+    </div>
+
+    <script>
+    document.getElementById("realFile").addEventListener("change", function () {
+    document.getElementById("fileText").value =
+        this.files.length ? this.files[0].name : "Choose file";
+    });
+    </script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .h1, .h2, .h3, .h4, .h5, .h6{
+            color: #3572b9;
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center">
+    <div class="container bg-light m-5 p-3 rounded" style="background-color: #d5e4e667; width: 50%;">
+        <h1 class="h1 text-center">Login</h1>
+        <form action="">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password">
+            </div>
+            <div>
+                <p >Did you forgot your password?<button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#forgotPassword">Forgot Password</button></p>
+                <div class="modal fade" id="forgotPassword">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Forgot Password</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="">
+                                    <div class="input-group">
+                                        <span class="input-group-text">Email</span>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>    
+                                    <div class="d-flex justify-content-center mt-3">
+                                        <button type="submit" class="btn btn-primary">Confirm</button>
+                                    </div>
+                                    <p class="text-center mt-3 text-dark mb-3 bg-info">ℹ️You can change your password by Clicking the link that you recived via mail.</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center ">
+                <!-- <button type="submit" class="btn btn-primary" onclick="login()"><a href="landingPage.html" class="text-white text-decoration-none">Login</a></button> -->
+                 <button type="submit" class="btn btn-primary" onclick="login()">Login</button>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <p>Don't have an account? <a href="registration.html" class="btn btn-link">Create Account</a></p>
+            </div>
+        </form>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+    function login(){
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        window.location.href = "landingPage.html?username=" + username + "&password=" + password;
+    }
+</script>
+</html>

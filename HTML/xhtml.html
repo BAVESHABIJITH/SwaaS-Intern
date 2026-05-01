@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>XHTML</title>
+</head>
+<body>
+     
+    <form action="first.html"  method="get" align="center" style="padding-top: 150px;">
+        <h1 style="text-align: center;">Registration Form</h1>
+        <table border="0" align="center" width="100px" height="200px">
+            <tr>
+                <td style="text-align: left;"><label for="Name">Name:</label></td>
+                <td><input type="text" id="Name" name="Name" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><label for="Age">Age:</label></td>
+                <td><input type="text" pattern="[18-24]" name="Age" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><label for="College">College:</label></td>
+                <td><input type="text" id="College" name="College" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><label for="Branch">Branch:</label></td>
+                <td><input type="text" id="Branch" name="Branch" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><label for="Gender">Gender:</label></td>
+                <td><input type="radio" id="Male" name="Gender" ><label for="Male">Male</label><input type="radio" id="Female" name="Gender" ><label for="Female">Female</label></td>
+            </tr>
+            <tr>
+                <td>Detpartment:</td>
+                <td>
+                    <select name="Detpartment" id="Detpartment" style="width: 100%;">
+                        <option value="IT">IT</option>
+                        <option value="CSE">CSE</option>
+                        <option value="BCA">BCA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Email:</td>
+                <td><input type="email" id="Email" name="Email" pattern="[a-z0-9]+@[a-z]+.com"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Password:</td>
+                <td><input type="password" id="Password" name="Password" ></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Fav. Dept.</td>
+                <td>
+                    <input type="checkbox" id="IT" name="IT" ><label for="IT">IT</label>
+                    <input type="checkbox" id="CSE" name="CSE" ><label for="CSE">CSE</label>
+                    <input type="checkbox" id="BCA" name="BCA" ><label for="BCA">BCA</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Upload your Resume:</td>
+                <td style="text-align: right;"><input type="file" id="Resume" name="Resume" style="width: 100%;"></td>
+               
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button type="submit" value="Submit">Submit</button></td>
+            </tr>       
+        </table>
+    </form>
+    
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+        Your browser does not support the HTML canvas tag.
+    </canvas>
+   <svg height="500" width="500">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="none" />
+    <circle cx="100" cy="50" r="40" stroke="black" stroke-width="3" fill="none" />
+    <circle cx="150" cy="50" r="40" stroke="black" stroke-width="3" fill="none" />
+    <circle cx="200" cy="50" r="40" stroke="black" stroke-width="3" fill="none" />
+   </svg>
+   <svg height="500" width="500">
+    <circle cx="50" cy="50" r="40" stroke="blue" stroke-width="3" fill="none" />
+    <circle cx="140" cy="50" r="40" stroke="black" stroke-width="3" fill="none" />
+    <circle cx="230" cy="50" r="40" stroke="red" stroke-width="3" fill="none" />
+    <circle cx="95" cy="95" r="40" stroke="yellow" stroke-width="3" fill="none" />
+    <circle cx="190" cy="95" r="40" stroke="green" stroke-width="3" fill="none" />
+   </svg>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        
+        ctx.fillStyle = "orange";
+        ctx.fillRect(0, 0, 200, 35);
+        ctx.fillStyle = "green";
+        ctx.fillRect(0, 70, 200, 35);
+    </script>
+</body>
+</html>

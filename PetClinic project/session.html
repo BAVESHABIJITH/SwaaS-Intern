@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>localStorage</h2>
+    <input type="text" id="name" placeholder="Enter your name">
+    <p id="p1"></p>
+    <button onclick="myFunction()">Try it</button>
+    <script>
+        function myFunction() {
+            var name = document.getElementById("name").value;
+            localStorage.setItem("name", name);
+            document.getElementById("p1").innerHTML = localStorage.getItem("name");
+            alert(localStorage.getItem("name"));
+        }
+    </script>
+</body>
+</html> 

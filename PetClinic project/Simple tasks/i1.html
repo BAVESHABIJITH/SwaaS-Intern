@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent h1{
+            color: wheat;
+        }
+        .parent>.child{
+            background-color: aqua;
+        }
+        .child h1~p{
+            color: red;
+        }
+        .child h1+p{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <h1>
+                Welcome to our Pet Clinic
+            </h1>
+            <p>
+                We are the leading Pet Clinic in your area. We provide best care for your pets. 
+                
+            </p>
+            <p>
+                We have a team of experienced veterinarians who are passionate about animal welfare. 
+            </p>
+        </div>
+    </div>
+</body>
+</html>

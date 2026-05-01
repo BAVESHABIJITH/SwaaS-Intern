@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 1000px;
+            height: 1000px;
+            margin: 100px;
+            background-color: wheat
+        }
+        .ani{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation: myAni;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes myAni{
+            0% {background-color: red; left: 0px; top: 0px;}
+            25% {background-color: blue; left: 1100px; top: 0px;}
+            50% {background-color: green; left: 1100px; top: 1100px;}
+            75% {background-color: yellow; left: 0px; top: 1100px;}
+            100% {background-color: red; left: 0px; top: 0px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="ani"></div>
+    </div>
+    
+</body>
+</html>

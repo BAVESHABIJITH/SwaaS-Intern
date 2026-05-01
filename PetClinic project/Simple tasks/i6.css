@@ -1,0 +1,85 @@
+.container{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+.static-box{
+    position: static;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+.relative-box{
+    position: relative;
+    height: 100px;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    background-color: green;
+}
+.absolute-box{
+    position: absolute;
+    height: 100px;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    background-color: blue;
+}
+.fixed-box{
+    position: fixed;
+    height: 100px;
+    right: 0;
+    width: 100px;
+    background-color: yellow;
+}
+.sticky-box{
+    position: sticky;
+    top: 0;
+    height: 100px;
+    width: 100px;
+    background-color: purple;
+    z-index: 1;
+}
+.con2{
+    background-color: white;
+    height: 1000px;
+    width: 1000px;
+    border: 1px solid black;
+}
+.static{
+    position: static;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+.relative{
+    position: relative;
+    height: 100px;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    background-color: green;
+}
+.absolute{
+    position: absolute;
+    height: 100px;
+    top: 750px;
+    left: 50px;
+    right:500px;
+    width: 100px;
+    background-color: blue;
+}
+.fixed{
+    position: fixed;
+    height: 100px;
+    right: 0;
+    width: 100px;
+    background-color: yellow;
+}
+.sticky{
+    position: sticky;
+    top: 0;
+    height: 100px;
+    width: 100px;
+    background-color: purple;
+}
